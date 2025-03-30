@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EgoLang - Programming Language</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="https://egolang.neocities.org/1743296644840.png" alt="EgoLang Logo">
+                <h1>EgoLang</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#intro"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#features"><i class="fas fa-star"></i> Features</a></li>
+                    <li><a href="#syntax"><i class="fas fa-code"></i> Syntax</a></li>
+                    <li><a href="#examples"><i class="fas fa-laptop-code"></i> Examples</a></li>
+                    <li><a href="#download"><i class="fas fa-download"></i> Download</a></li>
+                    <li><a href="#libraries"><i class="fas fa-book"></i> Libraries</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>EgoLang <span class="version-badge">V 2.7.9</span></h1>
+            <p>A strongly-typed programming language designed to give you more control over variable visibility and mutability, making your code more reliable and predictable.</p>
+            <a href="#download" class="btn">Get Started <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+    
+    <section id="intro">
+        <div class="container">
+            <h2 class="section-title">What is EgoLang?</h2>
+            <div class="doc-container">
+                <div class="doc-section">
+                    <p><strong>EgoLang</strong> is a strongly-typed programming language, designed to give developers more precise control over variable visibility and mutability. With a clear structure and secure data access, EgoLang makes code more reliable and predictable.</p>
+                    
+                    <p>Developed to prioritize security and clarity, EgoLang includes modern programming concepts with a simple and direct syntax. Every statement in the language is explicit about scope, modification capability, and data type, which eliminates many of the ambiguities found in other languages.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="features" class="documentation">
+        <div class="container">
+            <h2 class="section-title">Main Features</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Visibility Control</h3>
+                    <p>Clearly define the access scope for each variable and function with explicit visibility modifiers.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Explicit Mutability</h3>
+                    <p>Precisely specify if a variable can be modified after declaration, increasing code security.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Strong Typing</h3>
+                    <p>Strict type system to ensure consistency and avoid common errors during program execution.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <h3>Error Detection</h3>
+                    <p>Precise identification of code problems during compilation, before they become runtime bugs.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>JIT Compilation</h3>
+                    <p>Uses Just-In-Time compilation to transform EgoLang code into optimized Python bytecode.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Clear Structure</h3>
+                    <p>Clean and explicit syntax that makes code more readable and maintenance simpler.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="syntax">
+        <div class="container">
+            <h2 class="section-title">Basic Syntax</h2>
+            <div class="doc-container">
+                <div class="doc-section">
+                    <h3>Comments</h3>
+                    <p>EgoLang supports single-line and multi-line comments:</p>
+                    <pre><span class="comment">// This is a single-line comment</span>
+
+<span class="comment">/* This is a
+   multi-line
+   comment */</span></pre>
+                    
+                    <h3>Variables</h3>
+                    <p>Variables in EgoLang must be declared with visibility, mutability, type, and name:</p>
+                    <pre><span class="keyword">visibility</span> <span class="keyword">mutability</span> <span class="type">type</span> name = value;</pre>
+                    
+                    <p>For example:</p>
+                    <pre><span class="keyword">public</span> <span class="keyword">mutable</span> <span class="type">int</span> counter = <span class="number">0</span>;
+<span class="keyword">private</span> <span class="keyword">immutable</span> <span class="type">string</span> name = <span class="string">"Ego"</span>;
+<span class="keyword">protected</span> <span class="keyword">const</span> <span class="type">bool</span> isEnabled = <span class="keyword">true</span>;</pre>
+                    
+                    <h4>Visibility Modifiers</h4>
+                    <ul>
+                        <li><code><span class="keyword">public</span></code>: Accessible from anywhere</li>
+                        <li><code><span class="keyword">private</span></code>: Limited to the current scope</li>
+                        <li><code><span class="keyword">protected</span></code>: Limited to the current scope and child scopes</li>
+                    </ul>
+                    
+                    <h4>Mutability Modifiers</h4>
+                    <ul>
+                        <li><code><span class="keyword">mutable</span></code>: Can be changed after declaration</li>
+                        <li><code><span class="keyword">immutable</span></code>: Cannot be changed after declaration</li>
+                        <li><code><span class="keyword">const</span></code>: Cannot be changed (similar to immutable)</li>
+                    </ul>
+                    
+                    <h4>Data Types</h4>
+                    <ul>
+                        <li><code><span class="type">int</span></code>: Integer values</li>
+                        <li><code><span class="type">float</span></code>: Floating-point values</li>
+                        <li><code><span class="type">string</span></code>: Text values</li>
+                        <li><code><span class="type">bool</span></code>: Boolean values (true/false)</li>
+                        <li><code><span class="type">list</span></code>: List of values</li>
+                        <li><code><span class="type">dict</span></code>: Dictionary/map of key-value pairs</li>
+                    </ul>
+                    
+                    <h3>Control Structures</h3>
+                    
+                    <h4>Conditionals (if)</h4>
+                    <pre><span class="keyword">if</span> (condition) {
+    <span class="comment">// code to run if the condition is true</span>
+} <span class="keyword">else</span> {
+    <span class="comment">// code to run if the condition is false</span>
+}</pre>
+                    
+                    <h4>Loops</h4>
+                    <p>For Loops:</p>
+                    <pre><span class="keyword">for</span> (initialization; condition; update) {
+    <span class="comment">// code to run in the loop</span>
+}</pre>
+                    
+                    <p>While Loops:</p>
+                    <pre><span class="keyword">while</span> (condition) {
+    <span class="comment">// code to run while the condition is true</span>
+}</pre>
+                    
+                    <h3>Functions</h3>
+                    <p>Functions are declared with visibility, the <code>function</code> keyword, name, parameters, and body:</p>
+                    <pre><span class="keyword">visibility</span> <span class="keyword">function</span> <span class="function">name</span>(parameters) {
+    <span class="comment">// function body</span>
+}</pre>
+                    
+                    <p>For example:</p>
+                    <pre><span class="keyword">public</span> <span class="keyword">function</span> <span class="function">calculateArea</span>(<span class="type">int</span> width, <span class="type">int</span> height) {
+    <span class="keyword">public</span> <span class="keyword">mutable</span> <span class="type">int</span> area = width * height;
+    <span class="keyword">return</span> area;
+}</pre>
+                    
+                    <h3>Printing Values</h3>
+                    <pre><span class="function">print</span>(value);</pre>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="examples" class="documentation">
+        <div class="container">
+            <h2 class="section-title">Practical Examples</h2>
+            <div class="doc-container">
+                <div class="doc-section">
+                    <h3>Basic Variable Usage</h3>
+                    <pre><span class="keyword">public</span> <span class="keyword">mutable</span> <span class="type">int</span> x = <span class="number">10</span>;
+<span class="keyword">public</span> <span class="keyword">immutable</span> <span class="type">string</span> greeting = <span class="string">"Hello"</span>;
+<span class="function">print</span>(x);
+<span class="function">print</span>(greeting);</pre>
+                    
+                    <h3>Using Conditions</h3>
+                    <pre><span class="keyword">public</span> <span class="keyword">mutable</span> <span class="type">int</span> age = <span class="number">18</span>;
+
+<span class="keyword">if</span> (age >= <span class="number">18</span>) {
+    <span class="function">print</span>(<span class="string">"Adult"</span>);
+} <span class="keyword">else</span> {
+    <span class="function">print</span>(<span class="string">"Minor"</span>);
+}</pre>
+                    
+                    <h3>Loop Example</h3>
+                    <p>Using While:</p>
+                    <pre><span class="keyword">public</span> <span class="keyword">mutable</span> <span class="type">int</span> i = <span class="number">0</span>;
+<span class="keyword">while</span> (i < <span class="number">5</span>) {
+    <span class="function">print</span>(i);
+    i = i + <span class="number">1</span>;
+}</pre>
+                    
+                    <p>Using For:</p>
+                    <pre><span class="keyword">for</span> (<span class="keyword">public</span> <span class="keyword">mutable</span> <span class="type">int</span> j = <span class="number">0</span>; j < <span class="number">5</span>; j = j + <span class="number">1</span>) {
+    <span class="function">print</span>(j);
+}</pre>
+                    
+                    <h3>Function Example</h3>
+                    <pre><span class="keyword">public</span> <span class="keyword">function</span> <span class="function">add</span>(<span class="type">int</span> a, <span class="type">int</span> b) {
+    <span class="keyword">return</span> a + b;
+}
+
+<span class="keyword">public</span> <span class="keyword">mutable</span> <span class="type">int</span> result = <span class="function">add</span>(<span class="number">5</span>, <span class="number">3</span>);
+<span class="function">print</span>(result);</pre>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="error-handling">
+        <div class="container">
+            <h2 class="section-title">Error Handling</h2>
+            <div class="doc-container">
+                <div class="doc-section">
+                    <p>The EgoLang compiler will generate errors for:</p>
+                    <ol>
+                        <li>Attempts to modify an immutable variable</li>
+                        <li>Use of undefined variables</li>
+                        <li>Invalid visibility or mutability modifiers</li>
+                        <li>Invalid data types</li>
+                        <li>Syntax errors in control structures or function declarations</li>
+                    </ol>
+                    
+                    <p>Error messages will be included as comments in the generated Python code.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="compiler" class="documentation">
+        <div class="container">
+            <h2 class="section-title">Compilation Process</h2>
+            <div class="doc-container">
+                <div class="doc-section">
+                    <p>The EgoJITCompiler processes Ego code in these steps:</p>
+                    <ol>
+                        <li>Cleans the source code (removes comments, normalizes whitespace)</li>
+                        <li>Divides the code into logical blocks</li>
+                        <li>Translates each block to equivalent Python code</li>
+                        <li>Tracks variables and their properties in scopes</li>
+                        <li>Compiles the generated Python code to bytecode</li>
+                    </ol>
+                    
+                    <div class="warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <strong>Execution Environment:</strong> Compiled Ego programs run in the Python runtime environment, but maintain Ego's variable access and mutability rules through the generated code.
+                    </div>
+                    
+                    <h3>Language Limitations</h3>
+                    <ul>
+                        <li>No support for classes or object-oriented programming</li>
+                        <li>Limited data type operations</li>
+                        <li>No built-in exception handling</li>
+                        <li>Limited standard library</li>
+                    </ul>
+                    
+                    <h3>Using the Compiler</h3>
+                    <ol>
+                        <li>Go to the <code>src/Ego_compiler</code> file and scroll to the end of the code.</li>
+                        <li>Inside the <code>sample_code</code> instance, write your code:</li>
+                    </ol>
+                    
+                    <p>Example:</p>
+                    <pre>sample_code = <span class="string">"""
+
+<span class="keyword">public</span> <span class="keyword">mutable</span> <span class="type">int</span> x = <span class="number">10</span>;
+<span class="function">print</span>(x);
+
+"""</span></pre>
+                    
+                    <ol start="3">
+                        <li>In the function:</li>
+                    </ol>
+                    
+                    <pre>compiler.compile(sample_code, <span class="string">'output.ego'</span>)</pre>
+                    
+                    <p>Set the output filename by replacing <code>'output.ego'</code> with the name you want for the compiled file.</p>
+                    
+                    <p>Example:</p>
+                    <pre>compiler.compile(sample_code, <span class="string">'my_file.ego'</span>)</pre>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- New Download Section -->
+    <section id="download" class="download-section">
+        <div class="container">
+            <h2 class="section-title">Download EgoLang</h2>
+            <div class="download-container">
+                <div class="download-icon">
+                    <i class="fas fa-download"></i>
+                </div>
+                <h3>Get EgoLang Now</h3>
+                <p class="download-version">Current Version: v2.7.9 (March 29, 2025)</p>
+                <p>Download the latest version of EgoLang from our official GitHub repository. The package includes the compiler, documentation, and example code to help you get started.</p>
+                <a href="https://github.com/isamytanaka/EgoLang" class="download-btn" target="_blank">
+                    <i class="fab fa-github"></i> Download from GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+    
+<section id="libraries" class="libraries-section">
+    <div class="container">
+        <h2 class="section-title">Standard Libraries</h2>
+        <div class="doc-container">
+            <div class="doc-section">
+                <p>Standard libraries provide pre-built functionality to help you develop applications faster. These libraries will include common utilities, data structures, and algorithms.</p>
+                
+                <div class="coming-soon">
+                    <i class="fas fa-code-branch"></i>
+                    <h3>Coming Soon</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <section id="technologies">
+        <div class="container">
+            <h2 class="section-title">Technologies</h2>
+            <div class="doc-container">
+                <div class="doc-section" style="text-align: center;">
+                    <p>Technologies that were used to develop the beta version (1.0 <strong>beta</strong>).</p>
+                    <div style="margin: 30px 0;">
+                        <img src="https://img.shields.io/badge/Python-14354C?style=flat-square&logo=python&logoColor=white" alt="Python">
+                        <img src="https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white" alt="OpenAI">
+                        <img src="https://img.shields.io/badge/Claude_AI-3E5E8A?style=flat-square&logo=anthropic&logoColor=white" alt="Claude AI">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>EgoLang</h3>
+                <ul>
+                    <li><a href="#intro">About</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#syntax">Documentation</a></li>
+                    <li><a href="#compiler">Get Started</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#examples">Examples</a></li>
+                    <li><a href="#error-handling">Error Handling</a></li>
+                    <li><a href="#compiler">Compilation Process</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Technologies</h3>
+                <ul>
+                    <li><a href="#technologies">Python</a></li>
+                    <li><a href="#technologies">OpenAI</a></li>
+                    <li><a href="#technologies">Claude AI</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>EgoLang v2.7.9 | Updated on March 29, 2025</p>
+        </div>
+    </div>
+</footer>
+    <script src="script.js"></script>
+</body>
+</html>
